@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Jee Gupta | Assistant Professor of Marketing</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{
+  --crimson:#9b1c2e;--crimson-dark:#7a1522;--crimson-soft:#c0394a;
+  --crimson-pale:#fdeef0;--pearl:#fdf8f5;--pearl-2:#f5ede8;
+  --white:#fff;--text:#1c1c1c;--muted:#6b7280;--border:#e8dcd8;
+  --shadow:0 2px 12px rgba(155,28,46,.08);--shadow-hover:0 6px 24px rgba(155,28,46,.15);
+}
+body{font-family:'Georgia',serif;background:var(--pearl);color:var(--text);line-height:1.75;font-size:15px}
+a{color:var(--crimson);text-decoration:none;transition:color .2s}
+a:hover{color:var(--crimson-dark);text-decoration:underline}
+img{max-width:100%}
+
+/* ── NAVBAR ── */
+nav{position:sticky;top:0;z-index:200;background:var(--crimson-dark);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+.nav-wrap{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:54px}
+.nav-logo{color:#fff;font-size:14px;font-weight:bold;font-family:sans-serif;letter-spacing:.4px;white-space:nowrap}
+.nav-links{display:flex;gap:2px}
+.nav-links a{color:rgba(255,255,255,.8);font-family:sans-serif;font-size:12.5px;padding:6px 13px;border-radius:4px;transition:all .2s;letter-spacing:.2px}
+.nav-links a:hover{background:rgba(255,255,255,.15);color:#fff;text-decoration:none}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--crimson-dark) 0%,var(--crimson) 60%,#c0394a 100%);color:#fff;padding:4rem 1.5rem 3.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.04)}
+.hero::after{content:'';position:absolute;left:-60px;bottom:-100px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.03)}
+.hero-wrap{max-width:1080px;margin:0 auto;display:flex;gap:2.5rem;align-items:center;position:relative;z-index:1}
+.hero-photo{width:140px;height:140px;border-radius:50%;border:4px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:sans-serif;font-size:11px;color:rgba(255,255,255,.55);text-align:center;line-height:1.4;backdrop-filter:blur(4px)}
+.hero-text h1{font-size:2.2rem;font-weight:normal;letter-spacing:.3px;margin-bottom:.3rem}
+.hero-text .role{font-size:1rem;opacity:.88;font-family:sans-serif;margin-bottom:.15rem}
+.hero-text .inst{font-size:.88rem;opacity:.72;font-family:sans-serif;margin-bottom:1.1rem}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.25rem}
+.hero-tag{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-family:sans-serif;font-size:11.5px;padding:3px 12px;border-radius:20px}
+.hero-links{display:flex;flex-wrap:wrap;gap:8px}
+.hero-link{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-family:sans-serif;font-size:12px;padding:6px 15px;border-radius:6px;transition:all .2s;display:flex;align-items:center;gap:5px}
+.hero-link:hover{background:rgba(255,255,255,.25);text-decoration:none;transform:translateY(-1px)}
+
+/* ── STATS STRIP ── */
+.stats{background:var(--white);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+  .stats-wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr)}
+.stat{text-align:center;padding:1.1rem .5rem;border-right:1px solid var(--border);transition:background .2s}
+.stat:last-child{border-right:none}
+.stat:hover{background:var(--crimson-pale)}
+.stat-n{font-size:1.5rem;font-weight:bold;color:var(--crimson);font-family:sans-serif;line-height:1}
+.stat-l{font-size:11px;color:var(--muted);font-family:sans-serif;margin-top:4px}
+
+/* ── LAYOUT ── */
+.page{max-width:1080px;margin:0 auto;padding:2.5rem 1.5rem;display:grid;grid-template-columns:260px 1fr;gap:2.25rem;align-items:start}
+
+/* ── SIDEBAR ── */
+.sidebar{display:flex;flex-direction:column;gap:1rem;position:sticky;top:70px}
+.scard{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s}
+.scard:hover{box-shadow:var(--shadow-hover)}
+.scard-head{background:var(--crimson);color:#fff;font-family:sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.55rem 1rem}
+.scard-body{padding:.9rem 1rem}
+.scard-body p,.scard-body span{font-family:sans-serif;font-size:.82rem;color:var(--muted);line-height:1.65;display:block;margin-bottom:.2rem}
+.scard-body a{font-family:sans-serif;font-size:.82rem;color:var(--crimson);display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid var(--border);transition:all .2s}
+.scard-body a:last-child{border-bottom:none}
+.scard-body a:hover{color:var(--crimson-dark);padding-left:4px;text-decoration:none}
+.scard-body a::before{content:'›';font-size:14px;color:var(--crimson-soft)}
+.itag{display:inline-block;background:var(--crimson-pale);color:var(--crimson);font-family:sans-serif;font-size:11px;padding:3px 9px;border-radius:20px;margin:2px;border:1px solid #f0c0c8;transition:all .2s}
+.itag:hover{background:var(--crimson);color:#fff}
+
+/* ── MAIN ── */
+main{min-width:0}
+section{margin-bottom:2.75rem;scroll-margin-top:70px}
+.sec-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem}
+.sec-head h2{font-size:1.25rem;font-weight:normal;color:var(--crimson-dark);font-family:'Georgia',serif}
+.sec-line{flex:1;height:2px;background:linear-gradient(to right,var(--crimson),transparent)}
+
+/* ── ABOUT ── */
+.about-text{font-size:.94rem;line-height:1.9;margin-bottom:.85rem;color:var(--text)}
+.highlight{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--crimson);border-radius:0 6px 6px 0;padding:1rem 1.2rem;margin:1.1rem 0;font-family:sans-serif;font-size:.875rem;color:var(--muted);box-shadow:var(--shadow)}
+.highlight strong{color:var(--crimson-dark);display:block;margin-bottom:.2rem}
+
+/* ── EDUCATION ── */
+.edu-grid{display:flex;flex-direction:column;gap:.85rem}
+.edu-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem 1.2rem;display:grid;grid-template-columns:auto 1fr;gap:0 1rem;align-items:start;box-shadow:var(--shadow);transition:box-shadow .2s}
+.edu-card:hover{box-shadow:var(--shadow-hover)}
+.edu-year{font-family:sans-serif;font-size:12px;color:var(--white);background:var(--crimson);padding:3px 8px;border-radius:4px;white-space:nowrap;margin-top:3px}
+.edu-deg{font-weight:bold;font-size:.93rem;color:var(--text);margin-bottom:.15rem}
+.edu-inst{font-family:sans-serif;font-size:.83rem;color:var(--crimson);margin-bottom:.1rem}
+.edu-note{font-family:sans-serif;font-size:.8rem;color:var(--muted);font-style:italic}
+.iima-pill{display:inline-block;background:#7a1522;color:#fff;font-size:10px;font-family:sans-serif;padding:2px 7px;border-radius:3px;margin-left:6px;vertical-align:middle}
+
+/* ── PUBLICATIONS ── */
+.pub-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.2rem}
+.filter-btn{font-family:sans-serif;font-size:12px;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:var(--crimson);color:#fff;border-color:var(--crimson)}
+.pub-item{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem 1.2rem;margin-bottom:.75rem;box-shadow:var(--shadow);transition:box-shadow .2s}
+.pub-item:hover{box-shadow:var(--shadow-hover)}
+.pub-badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.5rem}
+.badge{font-family:sans-serif;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:3px}
+.bq1{background:#fdeef0;color:#7a1522;border:1px solid #f0c0c8}
+.bq2{background:#fff3e0;color:#8b4513;border:1px solid #f0d5b0}
+.bq3{background:#fef9e0;color:#856404;border:1px solid #e8d888}
+.bq4{background:#f0f0f0;color:#555;border:1px solid #ddd}
+.bwos{background:#e8f0fe;color:#1a3a7b;border:1px solid #b0c8f5}
+.bsco{background:#e8f5e9;color:#1b5e20;border:1px solid #a0d0a8}
+.pub-title{font-size:.9rem;line-height:1.6;color:var(--text);margin-bottom:.35rem}
+.pub-meta{font-family:sans-serif;font-size:.8rem;color:var(--muted)}
+.pub-journal{font-style:italic;color:var(--crimson-dark)}
+.pub-doi{display:inline-block;margin-top:.35rem;font-family:sans-serif;font-size:.78rem;color:var(--crimson);background:var(--crimson-pale);padding:2px 8px;border-radius:3px;transition:background .2s}
+.pub-doi:hover{background:var(--crimson);color:#fff;text-decoration:none}
+
+/* ── EXPERIENCE ── */
+.exp-item{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.2rem;margin-bottom:.75rem;box-shadow:var(--shadow);transition:box-shadow .2s;border-left:4px solid var(--crimson)}
+.exp-item:hover{box-shadow:var(--shadow-hover)}
+.exp-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin-bottom:.25rem}
+.exp-role{font-weight:bold;font-size:.93rem}
+.exp-period{font-family:sans-serif;font-size:.8rem;color:var(--white);background:var(--crimson-soft);padding:2px 9px;border-radius:3px}
+.exp-org{font-family:sans-serif;font-size:.85rem;color:var(--crimson);margin-bottom:.3rem}
+.exp-courses{font-family:sans-serif;font-size:.82rem;color:var(--muted)}
+
+/* ── PATENTS ── */
+.patent-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem 1.2rem;margin-bottom:.75rem;display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:center;box-shadow:var(--shadow);transition:box-shadow .2s}
+.patent-card:hover{box-shadow:var(--shadow-hover)}
+.patent-icon{width:42px;height:42px;background:var(--crimson-pale);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.patent-title{font-weight:bold;font-size:.88rem;color:var(--text);margin-bottom:.2rem}
+.patent-num{font-family:sans-serif;font-size:.78rem;color:var(--muted)}
+
+/* ── CONFERENCES ── */
+.conf-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.9rem 1.1rem;margin-bottom:.65rem;box-shadow:var(--shadow);transition:box-shadow .2s}
+.conf-card:hover{box-shadow:var(--shadow-hover)}
+.conf-title{font-size:.88rem;color:var(--text);margin-bottom:.3rem;line-height:1.55}
+.conf-venue{font-family:sans-serif;font-size:.78rem;color:var(--muted)}
+.conf-award{display:inline-block;background:#fef3c7;color:#92400e;font-size:10px;font-family:sans-serif;font-weight:700;padding:2px 8px;border-radius:3px;margin-left:6px;border:1px solid #f5d08a}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem;margin-bottom:1.5rem}
+.contact-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center;box-shadow:var(--shadow);transition:box-shadow .2s}
+.contact-card:hover{box-shadow:var(--shadow-hover)}
+.contact-icon{font-size:1.4rem;margin-bottom:.35rem}
+.contact-lbl{font-family:sans-serif;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem}
+.contact-val{font-family:sans-serif;font-size:.82rem;color:var(--crimson);word-break:break-all}
+.profile-buttons{display:flex;flex-wrap:wrap;gap:.6rem}
+.profile-btn{background:var(--crimson);color:#fff;font-family:sans-serif;font-size:12.5px;padding:8px 18px;border-radius:6px;transition:all .2s;display:inline-block}
+.profile-btn:hover{background:var(--crimson-dark);text-decoration:none;transform:translateY(-1px)}
+
+footer{background:var(--crimson-dark);color:rgba(255,255,255,.6);text-align:center;padding:1.5rem;font-family:sans-serif;font-size:12px}
+footer a{color:rgba(255,255,255,.75)}
+
+@media(max-width:720px){
+  .page{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .stats-wrap{grid-template-columns:repeat(3,1fr)}
+  .hero-wrap{flex-direction:column;text-align:center}
+  .hero-links,.hero-tags{justify-content:center}
+  .hero-photo{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .nav-links a{font-size:11px;padding:5px 8px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-wrap">
+    <span class="nav-logo">Om Jee Gupta</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#conferences">Talks</a>
+      <a href="#patents">Patents</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div class="hero-photo">Your Photo<br>Here</div>
+    <div class="hero-text">
+      <h1>Om Jee Gupta</h1>
+      <div class="role">Assistant Professor of Marketing</div>
+      <div class="inst">Jaipuria Institute of Management, Lucknow &nbsp;·&nbsp; Ph.D., BHU (2021) &nbsp;·&nbsp; IIMA Alumni</div>
+      <div class="inst" style="margin-top:.2rem;opacity:.8">Chairperson, Centre for Teaching &amp; Learning (CTL)</div>
+      <div class="hero-tags">
+        <span class="hero-tag">Consumer Behaviour</span>
+        <span class="hero-tag">Healthcare Marketing</span>
+        <span class="hero-tag">Management Education</span>
+        <span class="hero-tag">SEM · CFA · PLS-SEM</span>
+      </div>
+      <div class="hero-links">
+        <a class="hero-link" href="https://www.linkedin.com/in/dr-om-jee-gupta-8169b152/" target="_blank">&#128101; LinkedIn</a>
+        <a class="hero-link" href="https://www.jaipuria.ac.in/faculty/om-jee-gupta/" target="_blank">&#127979; Faculty Page</a>
+        <a class="hero-link" href="https://www.researchgate.net/profile/Om-Gupta-7" target="_blank">&#128269; ResearchGate</a>
+        <a class="hero-link" href="https://scholar.google.com/citations?user=wVKD69gAAAAJ&hl=en" target="_blank">&#127891; Scholar</a>
+        <a class="hero-link" href="https://www.scopus.com/authid/detail.uri?authorId=57211579936" target="_blank">&#128196; Scopus</a>
+        <a class="hero-link" href="https://www.linkedin.com/company/108381125/admin/dashboard/" target="_blank">&#127979; CTL</a>
+        <a class="hero-link" href="https://www.youtube.com/@omjeegupta7" target="_blank">&#127910; YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-wrap">
+    <div class="stat"><div class="stat-n">12+</div><div class="stat-l">Yrs Total Experience</div></div>
+    <div class="stat"><div class="stat-n">17</div><div class="stat-l">Journal Papers</div></div>
+    <div class="stat"><div class="stat-n">7</div><div class="stat-l">Book Chapters</div></div>
+    <div class="stat"><div class="stat-n">3</div><div class="stat-l">Patents</div></div>
+    <div class="stat"><div class="stat-n">2×</div><div class="stat-l">Best Paper Award</div></div>
+    <div class="stat"><div class="stat-n">IIM-A</div><div class="stat-l">FDP Alumni</div></div>
+  </div>
+</div>
+
+<!-- PAGE BODY -->
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="scard">
+      <div class="scard-head">Contact</div>
+      <div class="scard-body">
+        <span>📧 <a href="mailto:omjee.soe@hotmail.com" style="display:inline">omjee.soe@hotmail.com</a></span>
+        <span>📧 <a href="mailto:om.bhu@zohomail.in" style="display:inline">om.bhu@zohomail.in</a></span>
+        <span>📧 <a href="mailto:omjee.gupta@jaipuria.ac.in" style="display:inline">omjee.gupta@jaipuria.ac.in</a></span>
+        <span style="margin-top:.4rem">📱 +91-971 322 9886</span>
+        <span>📍 Lucknow, India</span>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="scard-head">Academic Profiles</div>
+      <div class="scard-body">
+        <a href="https://www.linkedin.com/in/dr-om-jee-gupta-8169b152/" target="_blank">LinkedIn</a>
+        <a href="https://www.jaipuria.ac.in/faculty/om-jee-gupta/" target="_blank">Jaipuria Faculty Page</a>
+        <a href="https://www.researchgate.net/profile/Om-Gupta-7" target="_blank">ResearchGate</a>
+        <a href="https://scholar.google.com/citations?user=wVKD69gAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=57211579936" target="_blank">Scopus Author Profile</a>
+        <a href="https://www.linkedin.com/company/108381125/admin/dashboard/" target="_blank">CTL — Centre for Teaching &amp; Learning</a>
+        <a href="https://www.youtube.com/@omjeegupta7" target="_blank">YouTube Channel</a>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="scard-head">Research Interests</div>
+      <div class="scard-body" style="padding-top:.7rem">
+        <span class="itag">Consumer Behaviour</span>
+        <span class="itag">Healthcare Marketing</span>
+        <span class="itag">Management Education</span>
+        <span class="itag">Chinese Products</span>
+        <span class="itag">Foreign Products</span>
+        <span class="itag">Indian Ethos</span>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="scard-head">Methods &amp; Tools</div>
+      <div class="scard-body">
+        <span>SEM · CFA · PLS-SEM</span>
+        <span>SPSS · AMOS · R-Studio</span>
+        <span>Bibliometric Analysis</span>
+        <span>Scale Development</span>
+        <span>Grounded Theory</span>
+        <span>Mixed Methods</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="sec-head"><h2>About</h2><div class="sec-line"></div></div>
+      <p class="about-text">I am an Assistant Professor of Marketing at the Jaipuria Institute of Management, Lucknow (since January 2023). I hold a Ph.D. in Marketing from Banaras Hindu University and an MBA in International Business from Devi Ahilya Vishwavidyalaya. I am a proud alumnus of the <strong>46th Faculty Development Programme at IIM Ahmedabad</strong> (April–May 2026).</p>
+      <p class="about-text">My research centres on consumer behaviour, healthcare marketing, and management education, employing structural equation modelling, CFA, PLS-SEM, and qualitative methods. My work appears in <em>Journal of Health Organization and Management</em>, <em>International Journal of Management Education</em>, <em>International Journal of Quality and Service Sciences</em>, and other Scopus Q1–Q2 journals.</p>
+      <div class="highlight">
+        <strong>🏛 IIMA Alumni — 46th FDP in Pedagogy &amp; Research Methods</strong>
+        Indian Institute of Management Ahmedabad &nbsp;·&nbsp; April 7 – May 21, 2026
+      </div>
+      <p class="about-text">I serve as a member of the <strong>AIDEDU ERASMUS+ EU Project</strong> (2023–ongoing), an international initiative on inclusive digitized education, with visits to institutions in Nepal and Spain. I also conduct Management Development Programmes for organisations including BPCL, IOCL, and Annpurna Finance.</p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="sec-head"><h2>Education &amp; Credentials</h2><div class="sec-line"></div></div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <span class="edu-year">2021</span>
+          <div>
+            <div class="edu-deg">Ph.D. in Marketing</div>
+            <div class="edu-inst">Banaras Hindu University — Institute of Management Studies</div>
+            <div class="edu-note">Dissertation: "Impact of Chinese Products on Consumer Purchase Intention"</div>
+          </div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-year">2026</span>
+          <div>
+            <div class="edu-deg">Faculty Development Programme — Pedagogy &amp; Research Methods <span class="iima-pill">IIMA Alumni</span></div>
+            <div class="edu-inst">Indian Institute of Management, Ahmedabad — 46th FDP</div>
+            <div class="edu-note">April 7 – May 21, 2026</div>
+          </div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-year">2012</span>
+          <div>
+            <div class="edu-deg">MBA, International Business</div>
+            <div class="edu-inst">Devi Ahilya Vishwavidyalaya — School of Economics</div>
+          </div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-year">2009</span>
+          <div>
+            <div class="edu-deg">BA — Economics &amp; Sociology</div>
+            <div class="edu-inst">VBS Purvanchal University, KBPG College</div>
+          </div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-year">2013</span>
+          <div>
+            <div class="edu-deg">UGC NET Qualified — Management</div>
+            <div class="edu-inst">National Eligibility Test</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="sec-head"><h2>Research &amp; Publications</h2><div class="sec-line"></div></div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq2">Scopus Q2</span></div>
+        <div class="pub-title">Gupta, O. J. &amp; Bariar, S. (2026). Generation Z and Quality Standards in Management Education: Developing a Tri-Dimensional Scale for Excellence. <span class="pub-journal">International Journal of Educational Reform.</span></div>
+        <a class="pub-doi" href="https://doi.org/10.1177/10567879261472821" target="_blank">DOI: 10.1177/10567879261472821</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq1">Scopus Q1</span><span class="badge bq2">ABDC-B</span></div>
+        <div class="pub-title">Gupta, O. J. &amp; Choudhury, M. (2026). Unveiling the Role of Peer Influence in the Adoption of Eco-Friendly Smartphones. <span class="pub-journal">International Journal of Quality and Service Sciences.</span></div>
+        <a class="pub-doi" href="https://doi.org/10.1108/IJQSS-09-2025-0226" target="_blank">DOI: 10.1108/IJQSS-09-2025-0226</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq2">Scopus Q2</span><span class="badge bq4">ABDC-C</span></div>
+        <div class="pub-title">Darda, P. &amp; Gupta, O. J. (2026). Shadows in the Feed: A Critical Examination of Dark Patterns and User Manipulation on Social Media. <span class="pub-journal">Asian Journal of Business Ethics,</span> 1–21.</div>
+        <a class="pub-doi" href="https://doi.org/10.1007/s13520-026-00254-2" target="_blank">DOI: 10.1007/s13520-026-00254-2</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq2">Scopus Q2</span><span class="badge bq2">ABDC-B</span><span class="badge bwos">Web of Science</span></div>
+        <div class="pub-title">Gupta, O. J., Singh, K., Yadav, S., Darda, P. &amp; Parihar, S. S. (2025). Post-Pandemic Healthcare Choices: SERVQUAL Model and the Influence of Hospital Image. <span class="pub-journal">Journal of Health Organization and Management, 39</span>(7), 1380–1400.</div>
+        <a class="pub-doi" href="https://doi.org/10.1108/JHOM-01-2024-0002" target="_blank">DOI: 10.1108/JHOM-01-2024-0002</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq3">Scopus Q3</span><span class="badge bq4">ABDC-C</span><span class="badge bwos">Web of Science</span></div>
+        <div class="pub-title">Parihar, S. S., Rana, S., Gupta, O. J. &amp; Srivastava, V. (2025). What Helps in Enhancing Pharma Sales? Interplay Between Technology and Human Interaction. <span class="pub-journal">International Journal of Pharmaceutical and Healthcare Marketing, 20</span>(2), 311–329.</div>
+        <a class="pub-doi" href="https://doi.org/10.1108/IJPHM-10-2024-0104" target="_blank">DOI: 10.1108/IJPHM-10-2024-0104</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq4">Scopus Q4</span><span class="badge bq4">ABDC-C</span></div>
+        <div class="pub-title">Darda, P., Gupta, O. J. &amp; Patra, S. K. (2025). From Click to Curb in Minutes: Unpacking the Q-Commerce Boom and Its Impact on Consumer Wellbeing in India. <span class="pub-journal">International Journal of Services &amp; Standards, 15</span>(1/2), 81–102.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq3">Scopus Q3</span><span class="badge bq4">ABDC-C</span><span class="badge bwos">Web of Science</span></div>
+        <div class="pub-title">Gupta, O. J., Srivastava, M. K., Darda, P., Yadav, S. &amp; Mishra, V. (2024). How Consumer Trust Affects the Adoption of e-Healthcare Products on Mobile Apps. <span class="pub-journal">International Journal of Pharmaceutical and Healthcare Marketing, 19</span>(3), 351–376.</div>
+        <a class="pub-doi" href="https://doi.org/10.1108/IJPHM-03-2023-0027" target="_blank">DOI: 10.1108/IJPHM-03-2023-0027</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq2">Scopus Q2</span><span class="badge bq2">ABDC-B</span></div>
+        <div class="pub-title">Darda, P., Gupta, O. J. &amp; Yadav, S. (2024). Metamorphosing Traditional Pedagogy: Examining the Transcendent Influence of Alexa in Rural India. <span class="pub-journal">International Journal of Educational Management, 38</span>(3), 605–621.</div>
+        <a class="pub-doi" href="https://doi.org/10.1108/IJEM-07-2023-0347" target="_blank">DOI: 10.1108/IJEM-07-2023-0347</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq1">Scopus Q1</span><span class="badge bq4">ABDC-C</span></div>
+        <div class="pub-title">Gupta, O. J., Yadav, S., Srivastava, M. K., Darda, P. &amp; Mishra, V. (2024). Understanding the Intention to Use Metaverse in Healthcare: A Mixed Method Approach. <span class="pub-journal">International Journal of Healthcare Management, 17</span>(2), 318–329.</div>
+        <a class="pub-doi" href="https://doi.org/10.1080/20479700.2023.2183579" target="_blank">DOI: 10.1080/20479700.2023.2183579</a>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bq1">Scopus Q1</span><span class="badge bq2">ABDC-B</span></div>
+        <div class="pub-title">Gupta, O. J. &amp; Yadav, S. (2023). Determinants in Advancement of Teaching and Learning in Higher Education. <span class="pub-journal">International Journal of Management Education, 21</span>(2).</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bwos">Web of Science</span></div>
+        <div class="pub-title">Srivastava, M. K. &amp; Gupta, O. J. (2021). Management Research in Private Institutions of India: Opportunities and Challenges. <span class="pub-journal">Journal of Contemporary Issues in Business and Government, 27</span>(3), 1081–1084.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bsco">Scopus</span></div>
+        <div class="pub-title">Gupta, O. J., Singh, A. &amp; Rai, P. (2019). Asserting Factors of Consumer Purchase Intention towards Chinese Products on M-Commerce Platform. <span class="pub-journal">International Journal of Engineering and Advanced Technology, 9</span>(1), 6871–6879.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-badges"><span class="badge bsco">Scopus</span></div>
+        <div class="pub-title">Rai, P. &amp; Gupta, O. J. (2019). Measuring the Mediating Effect of Utilitarian Motive in the Relationship of Product Quality, Product Price with Consumer Purchase Intention. <span class="pub-journal">International Journal of Recent Technology and Engineering, 8</span>(2S10), 809–816.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Gupta, O. J. &amp; Singh, A. (2019). Consumer Animosity Towards Chinese Products: A Case of India. <span class="pub-journal">SUMEDHA-Journal of Management, 8</span>(1), 43–57.</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Gupta, O. J. &amp; Singh, A. (2017). Influence of Quality &amp; Design on Purchase Intention: Empirical Study of Chinese Brand. <span class="pub-journal">SMS Journal of Entrepreneurship &amp; Innovation, 4</span>(1), 94–103.</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Gupta, O. J. &amp; Singh, A. (2017). Impact of Relationship Management on Customer Loyalty of e-Wallet Users. <span class="pub-journal">SMS Journal of Entrepreneurship and Innovation, 3</span>(2), 42–50.</div>
+      </div>
+
+      <div class="sec-head" style="margin-top:2rem"><h2 style="font-size:1rem">Book Chapters &amp; Edited Book</h2><div class="sec-line"></div></div>
+      <div class="pub-item"><div class="pub-badges"><span class="badge" style="background:#e8f0fe;color:#1a3a7b;border:1px solid #b0c8f5">Wiley</span></div><div class="pub-title">Darda, P., Pandey, S., Gupta, O. J., Kaur, M. &amp; Gaur, S. (2024). Clubhouse Unleashed: Harnessing Voice for Social Networking &amp; Business Growth. <span class="pub-journal">Wiley.</span> ISBN: 9781394234028.</div></div>
+      <div class="pub-item"><div class="pub-badges"><span class="badge" style="background:#e8f0fe;color:#1a3a7b;border:1px solid #b0c8f5">Wiley</span></div><div class="pub-title">Darda, P., Pandey, S., Gupta, O. J., Yadav, S. &amp; Malik, R. (2024). Metaverse: A New Avatar-Based Technology for Diverse Educational Experiences. <span class="pub-journal">Wiley.</span> ISBN: 978-1-394-19999-0.</div></div>
+      <div class="pub-item"><div class="pub-badges"><span class="badge bsco">Scopus</span><span class="badge" style="background:#fce4ec;color:#880e4f;border:1px solid #f0a0b8">Taylor &amp; Francis</span></div><div class="pub-title">Yadav, S., Gupta, O. J., Darda, P. &amp; Chaudhary, P. (2024). The Role of Big Data in Modern Markets. <span class="pub-journal">Apple Academic Press / Taylor &amp; Francis.</span> ISBN: 9781003538486.</div></div>
+      <div class="pub-item"><div class="pub-badges"><span class="badge bsco">Scopus</span><span class="badge" style="background:#fce4ec;color:#880e4f;border:1px solid #f0a0b8">CRC / T&amp;F</span></div><div class="pub-title">Yadav, S., Gupta, O. J., Gupta, S. K. &amp; Babu, H. (2023). Blockchain Technology Based Fake News Detection. <span class="pub-journal">AI-based Metaheuristics for Information Security and Digital Media. CRC / Taylor &amp; Francis.</span></div></div>
+      <div class="pub-item"><div class="pub-badges"><span class="badge bsco">Scopus</span><span class="badge" style="background:#fce4ec;color:#880e4f;border:1px solid #f0a0b8">Taylor &amp; Francis</span></div><div class="pub-title">Darda, P., Gupta, O. J. &amp; Pendse, M. (2023). Factors Affecting Adoption of E-Learning System During Covid-19. <span class="pub-journal">Advances in Distance Learning in Times of Pandemic. Taylor &amp; Francis.</span></div></div>
+      <div class="pub-item"><div class="pub-title">Singh, A., Kumar, R. &amp; Gupta, O. J. (Eds.) (2019). <span class="pub-journal">Entrepreneurship Today: A Case Study Approach.</span> Manakin Press, New Delhi. ISBN: 978-9388342247.</div></div>
+    </section>
+
+    <!-- PATENTS -->
+    <section id="patents">
+      <div class="sec-head"><h2>Patents</h2><div class="sec-line"></div></div>
+      <div class="patent-card">
+        <div class="patent-icon">🛍</div>
+        <div><div class="patent-title">Retail Merchandising Aided by Shop Display Systems</div><div class="patent-num">Application No. 202211009293 A &nbsp;·&nbsp; Published: 25 Feb 2022</div></div>
+      </div>
+      <div class="patent-card">
+        <div class="patent-icon">🚚</div>
+        <div><div class="patent-title">Delivery Allocation System for Logistics and Method Thereof</div><div class="patent-num">Application No. 202221028248 A &nbsp;·&nbsp; Published: 01 Jul 2022</div></div>
+      </div>
+      <div class="patent-card">
+        <div class="patent-icon">🎓</div>
+        <div><div class="patent-title">Voluntary Teaching Based Online Learning System for Enhanced Education and Method Thereof</div><div class="patent-num">Application No. 202221028247 A &nbsp;·&nbsp; Published: 15 Jul 2022</div></div>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching">
+      <div class="sec-head"><h2>Teaching Experience</h2><div class="sec-line"></div></div>
+      <div class="exp-item">
+        <div class="exp-top"><span class="exp-role">Assistant Professor – Marketing</span><span class="exp-period">Jan 2023 – Present</span></div>
+        <div class="exp-org">Jaipuria Institute of Management, Lucknow</div>
+        <div class="exp-courses">Consumer Behaviour &nbsp;·&nbsp; Marketing Analytics &nbsp;·&nbsp; B2B Marketing &nbsp;·&nbsp; Luxury Retail</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top"><span class="exp-role">Assistant Professor – School of Management (PG)</span><span class="exp-period">Jul 2021 – Jan 2023</span></div>
+        <div class="exp-org">Dr. Vishwanath Karad MIT World Peace University, Pune</div>
+        <div class="exp-courses">Consumer Behaviour &nbsp;·&nbsp; Marketing Research &nbsp;·&nbsp; International Marketing &nbsp;·&nbsp; Selling &amp; Negotiation &nbsp;·&nbsp; Marketing Analytics</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top"><span class="exp-role">Assistant Professor – College of Higher Education</span><span class="exp-period">Jul 2018 – Jun 2021</span></div>
+        <div class="exp-org">Pranveer Singh Institute of Technology (PSIT), Kanpur</div>
+        <div class="exp-courses">Marketing Management &nbsp;·&nbsp; Business Communication &nbsp;·&nbsp; Managerial Economics &nbsp;·&nbsp; Consumer Behaviour &nbsp;·&nbsp; Export Documentation</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top"><span class="exp-role">Assistant Professor – Faculty of Commerce &amp; Management</span><span class="exp-period">May 2015 – Jan 2016</span></div>
+        <div class="exp-org">Rama University</div>
+        <div class="exp-courses">Consumer Behaviour &nbsp;·&nbsp; Export Documentation &nbsp;·&nbsp; Business Communication</div>
+      </div>
+      <div class="sec-head" style="margin-top:1.75rem"><h2 style="font-size:1rem">Industry Experience</h2><div class="sec-line"></div></div>
+      <div class="exp-item">
+        <div class="exp-top"><span class="exp-role">Export Marketing Executive</span><span class="exp-period">Jan 2014 – Sep 2014</span></div>
+        <div class="exp-org">Ozone Overseas Pvt. Ltd.</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top"><span class="exp-role">Export Executive</span><span class="exp-period">Jul 2012 – Jul 2013</span></div>
+        <div class="exp-org">Maersk Line — A.P. Moller Maersk Group</div>
+      </div>
+    </section>
+
+    <!-- CONFERENCES -->
+    <section id="conferences">
+      <div class="sec-head"><h2>Talks &amp; Conferences</h2><div class="sec-line"></div></div>
+      <div class="conf-card">
+        <div class="conf-title">Retail Reimagined: Chatbots, Omni-Channel Strategies, and the Psychology of Purchase Intent</div>
+        <div class="conf-venue">5th Annual International Research Conference, IIM Lucknow &nbsp;·&nbsp; Feb 2026</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Adoption Patterns of Metaverse Platforms in Retail Environments</div>
+        <div class="conf-venue">National Conference, IMS Unison University, Dehradun &nbsp;·&nbsp; Mar 2024</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Factors Influencing Customer Experience in Bancassurance: A CFA Investigation</div>
+        <div class="conf-venue">2nd International Conference on Behavioural Finance, IIT Allahabad &nbsp;·&nbsp; Jun 2023</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Consumer Trust and Willingness to Purchase e-Healthcare Products on Mobile Apps <span class="conf-award">🏆 Best Paper</span></div>
+        <div class="conf-venue">ICRIEMSD-2022, O P Jindal University &nbsp;·&nbsp; Nov 2022</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Consumer Attitude and Purchase Intention: Online Health Insurance Products <span class="conf-award">🏆 Best Paper</span></div>
+        <div class="conf-venue">Sandip University, Nashik &nbsp;·&nbsp; Jul 2022</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Management Research in Private Institutions of India: Opportunities and Challenges</div>
+        <div class="conf-venue">Conclave on Redefining Management Research, ICSSR–New Delhi × IIM Trichy &nbsp;·&nbsp; Feb 2020</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Determinants of Consumers' Intention to Purchase Chinese Products on M-Commerce Platform using CFA</div>
+        <div class="conf-venue">IMRDC2018, IIM Bangalore &nbsp;·&nbsp; Jan 2018</div>
+      </div>
+      <div class="sec-head" style="margin-top:1.75rem"><h2 style="font-size:1rem">Guest Lectures &amp; MDP Sessions</h2><div class="sec-line"></div></div>
+      <div class="conf-card">
+        <div class="conf-title">Mastering the Art of Scholarly Writing for High-Impact Publications</div>
+        <div class="conf-venue">International Conference on Business &amp; Economics, Integral Business School × Szechenyi Istvan University, Hungary &nbsp;·&nbsp; Oct 2025</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Customer Relationship Management — MDP Session, Annpurna Finance Pvt. Ltd.</div>
+        <div class="conf-venue">Jaipuria Institute of Management, Lucknow &nbsp;·&nbsp; Jul 2026</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Time Management — MDP Session (BPCL LPG Division)</div>
+        <div class="conf-venue">Jaipuria Institute of Management, Lucknow &nbsp;·&nbsp; Jan 2025</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Customer Education and Awareness — MDP Sessions (BPCL &amp; IOCL)</div>
+        <div class="conf-venue">Lucknow · Surat · Vadodara &nbsp;·&nbsp; Dec 2023 &amp; Dec 2024</div>
+      </div>
+      <div class="sec-head" style="margin-top:1.75rem"><h2 style="font-size:1rem">International Activities</h2><div class="sec-line"></div></div>
+      <div class="conf-card">
+        <div class="conf-title">AIDEDU ERASMUS+ EU Project — Accessible &amp; Inclusive Digitized Education</div>
+        <div class="conf-venue">Member from JIM, Lucknow &nbsp;·&nbsp; Nov 2023 – Ongoing &nbsp;·&nbsp; Visited Nepal (Kathmandu University) &amp; Spain (University of Alicante)</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-title">Indian Youth Delegation to China — Youth Exchange Programme</div>
+        <div class="conf-venue">Ministry of Youth Affairs &amp; Sports, GoI × People's Republic of China &nbsp;·&nbsp; Jun 2017</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="sec-head"><h2>Contact</h2><div class="sec-line"></div></div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <div class="contact-lbl">Primary</div>
+          <div class="contact-val"><a href="mailto:omjee.soe@hotmail.com">omjee.soe@hotmail.com</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <div class="contact-lbl">Zoho</div>
+          <div class="contact-val"><a href="mailto:om.bhu@zohomail.in">om.bhu@zohomail.in</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <div class="contact-lbl">Official</div>
+          <div class="contact-val"><a href="mailto:omjee.gupta@jaipuria.ac.in">omjee.gupta@jaipuria.ac.in</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📱</div>
+          <div class="contact-lbl">Mobile</div>
+          <div class="contact-val">+91-971 322 9886</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <div class="contact-lbl">Location</div>
+          <div class="contact-val">Jaipuria Institute of Management, Lucknow, India</div>
+        </div>
+      </div>
+      <div class="profile-buttons">
+        <a class="profile-btn" href="https://www.linkedin.com/in/dr-om-jee-gupta-8169b152/" target="_blank">LinkedIn</a>
+        <a class="profile-btn" href="https://www.jaipuria.ac.in/faculty/om-jee-gupta/" target="_blank">Faculty Page</a>
+        <a class="profile-btn" href="https://www.researchgate.net/profile/Om-Gupta-7" target="_blank">ResearchGate</a>
+        <a class="profile-btn" href="https://scholar.google.com/citations?user=wVKD69gAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a class="profile-btn" href="https://www.scopus.com/authid/detail.uri?authorId=57211579936" target="_blank">Scopus</a>
+        <a class="profile-btn" href="https://www.linkedin.com/company/108381125/admin/dashboard/" target="_blank">CTL</a>
+        <a class="profile-btn" href="https://www.youtube.com/@omjeegupta7" target="_blank">▶ YouTube</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  &copy; 2026 Om Jee Gupta &nbsp;·&nbsp; Assistant Professor of Marketing, Jaipuria Institute of Management, Lucknow<br>
+  <a href="mailto:omjee.soe@hotmail.com">omjee.soe@hotmail.com</a> &nbsp;·&nbsp; <a href="mailto:om.bhu@zohomail.in">om.bhu@zohomail.in</a> &nbsp;·&nbsp; <a href="mailto:omjee.gupta@jaipuria.ac.in">omjee.gupta@jaipuria.ac.in</a> &nbsp;·&nbsp; Last updated: August 2026
+</footer>
+
+<script>
+  // Smooth active nav highlight on scroll
+  const secs = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',()=>{
+    let cur='';
+    secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id});
+    links.forEach(a=>{
+      a.style.background=a.getAttribute('href')==='#'+cur?'rgba(255,255,255,.18)':'';
+      a.style.color=a.getAttribute('href')==='#'+cur?'#fff':'';
+    });
+  });
+</script>
+</body>
+</html>
