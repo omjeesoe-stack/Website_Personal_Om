@@ -182,8 +182,8 @@ section{margin-bottom:2.75rem;scroll-margin-top:70px}
 .conf-card{border-left:3px solid #7c3aed}
 
 /* ── FLIP-IN TRANSITION BETWEEN SECTIONS ── */
-section:not(.hero){opacity:0;transform:perspective(6000px) rotateX(5deg) translateY(20px);transform-origin:top center;transition:opacity 1000ms ease, transform 1000ms ease;will-change:transform,opacity}
-section:not(.hero).in-view{opacity:1;transform:perspective(6000px) rotateX(0deg) translateY(0)}
+section:not(.hero){opacity:0;transform:scaleY(0.97) translateY(20px);transform-origin:top center;transition:opacity 900ms ease, transform 900ms ease;will-change:transform,opacity}
+section:not(.hero).in-view{opacity:1;transform:scaleY(1) translateY(0)}
 section.hero{opacity:1;transform:none}
 html{scroll-behavior:smooth}
 
@@ -718,8 +718,11 @@ footer a{color:rgba(255,255,255,.75)}
         entry.target.classList.add('in-view');
       }
     });
-  },{threshold:0.05, rootMargin:'0px 0px -40px 0px'});
+  },{threshold:0.01, rootMargin:'0px 0px -20px 0px'});
   secs.forEach(s=>flipObserver.observe(s));
+
+  // Safety net: ensure nothing stays permanently hidden
+  setTimeout(()=>{ secs.forEach(s=>s.classList.add('in-view')); }, 4000);
 </script>
 </body>
 </html>
