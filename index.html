@@ -132,6 +132,61 @@ section{margin-bottom:2.75rem;scroll-margin-top:70px}
 .conf-venue{font-family:sans-serif;font-size:.78rem;color:var(--muted)}
 .conf-award{display:inline-block;background:#fef3c7;color:#92400e;font-size:10px;font-family:sans-serif;font-weight:700;padding:2px 8px;border-radius:3px;margin-left:6px;border:1px solid #f5d08a}
 
+/* ── CONSULTING ── */
+.offer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem}
+.offer-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.2rem;box-shadow:var(--shadow);transition:all .25s;border-top:3px solid var(--crimson)}
+.offer-card:hover{transform:translateY(-3px)}
+.offer-card.c-teal{border-top-color:#0d9488}
+.offer-card.c-teal .offer-icon{color:#0d9488}
+.offer-card.c-amber{border-top-color:#d97706}
+.offer-card.c-amber .offer-icon{color:#d97706}
+.offer-card.c-indigo{border-top-color:#4338ca}
+.offer-card.c-indigo .offer-icon{color:#4338ca}
+.offer-card.c-rose{border-top-color:#be185d}
+.offer-card.c-rose .offer-icon{color:#be185d}
+.offer-group-label.c-teal{color:#0d9488}
+.offer-group-label.c-amber{color:#d97706}
+.offer-group-label.c-indigo{color:#4338ca}
+.offer-group-label.c-rose{color:#be185d}
+.offer-card:hover{box-shadow:var(--shadow-hover)}
+.offer-icon{font-size:1.5rem;margin-bottom:.5rem}
+.offer-title{font-weight:bold;font-size:.92rem;color:var(--text);margin-bottom:.35rem}
+.offer-desc{font-family:sans-serif;font-size:.8rem;color:var(--muted);line-height:1.6}
+.offer-group-label{font-family:sans-serif;font-size:11px;color:var(--crimson-dark);text-transform:uppercase;letter-spacing:.6px;font-weight:700;margin:1.3rem 0 .7rem}
+.offer-group-label:first-child{margin-top:0}
+.cta-box{background:linear-gradient(135deg,var(--crimson-dark) 0%,var(--crimson) 100%);border-radius:10px;padding:1.6rem 1.5rem;text-align:center;color:#fff;margin-top:.5rem}
+.cta-box h3{font-family:'Georgia',serif;font-weight:normal;font-size:1.2rem;margin-bottom:.4rem}
+.cta-box p{font-family:sans-serif;font-size:.85rem;opacity:.88;margin-bottom:1rem}
+.cta-btn{display:inline-block;background:#fff;color:var(--crimson-dark);font-family:sans-serif;font-weight:700;font-size:.9rem;padding:.7rem 1.6rem;border-radius:6px;transition:all .2s}
+.cta-btn:hover{background:var(--crimson-pale);text-decoration:none}
+
+/* ── SPARKLE ACCENTS PER TAB ── */
+#about .sec-line{background:linear-gradient(to right,var(--crimson),transparent)}
+#education .sec-line{background:linear-gradient(to right,#4338ca,transparent)}
+#education h2{color:#4338ca}
+#publications .sec-line{background:linear-gradient(to right,#d97706,transparent)}
+#publications h2{color:#d97706}
+#patents .sec-line{background:linear-gradient(to right,#0d9488,transparent)}
+#patents h2{color:#0d9488}
+#teaching .sec-line{background:linear-gradient(to right,#be185d,transparent)}
+#teaching h2{color:#be185d}
+#conferences .sec-line{background:linear-gradient(to right,#7c3aed,transparent)}
+#conferences h2{color:#7c3aed}
+#consulting .sec-line{background:linear-gradient(to right,#0d9488,#d97706,#4338ca,#be185d)}
+#contact .sec-line{background:linear-gradient(to right,var(--crimson),transparent)}
+
+#education .edu-card{border-left:3px solid #4338ca}
+#publications .pub-item{border-left:3px solid #d97706}
+.patent-card{border-left:3px solid #0d9488}
+#teaching .exp-item{border-left:3px solid #be185d}
+.conf-card{border-left:3px solid #7c3aed}
+
+/* ── FLIP-IN TRANSITION BETWEEN SECTIONS ── */
+section:not(.hero){opacity:0;transform:perspective(1400px) rotateX(10deg) translateY(24px);transform-origin:top center;transition:opacity 1000ms ease, transform 1000ms ease;will-change:transform,opacity}
+section:not(.hero).in-view{opacity:1;transform:perspective(1400px) rotateX(0deg) translateY(0)}
+section.hero{opacity:1;transform:none}
+html{scroll-behavior:smooth}
+
 /* ── CONTACT ── */
 .contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem;margin-bottom:1.5rem}
 .contact-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center;box-shadow:var(--shadow);transition:box-shadow .2s}
@@ -171,6 +226,7 @@ footer a{color:rgba(255,255,255,.75)}
       <a href="#teaching">Teaching</a>
       <a href="#conferences">Talks</a>
       <a href="#patents">Patents</a>
+      <a href="#consulting">Consulting</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -535,9 +591,67 @@ footer a{color:rgba(255,255,255,.75)}
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONSULTING -->
+    <section id="consulting">
+      <div class="sec-head"><h2>Consulting Services</h2><div class="sec-line"></div></div>
+      <p class="about-text" style="margin-bottom:1.4rem">I help organisations make sense of customer behaviour and build stronger marketing, research, and AI-enabled teaching capabilities &mdash; across consumer markets, healthcare, and management education.</p>
+
+      <div class="offer-group-label c-teal">Research-as-a-Service</div>
+      <div class="offer-grid">
+        <div class="offer-card c-teal">
+          <div class="offer-icon">🛍️</div>
+          <div class="offer-title">Consumer Behaviour Research</div>
+          <div class="offer-desc">Understand what drives purchase decisions, brand perception, and preference in your target market.</div>
+        </div>
+        <div class="offer-card c-teal">
+          <div class="offer-icon">🏥</div>
+          <div class="offer-title">Healthcare Marketing Strategy</div>
+          <div class="offer-desc">Measure service quality and patient trust, and identify what's holding back adoption of your digital health or health-tech product.</div>
+        </div>
+      </div>
+
+      <div class="offer-group-label c-amber">Corporate Training</div>
+      <div class="offer-grid">
+        <div class="offer-card c-amber">
+          <div class="offer-icon">🤖</div>
+          <div class="offer-title">AI in Teaching &amp; Research</div>
+          <div class="offer-desc">Training faculty and researchers to use AI tools effectively in classrooms and studies.</div>
+        </div>
+      </div>
+
+      <div class="offer-group-label c-indigo">Methodology-as-a-Service</div>
+      <div class="offer-grid">
+        <div class="offer-card c-indigo">
+          <div class="offer-icon">📊</div>
+          <div class="offer-title">PLS-SEM / R-Studio</div>
+          <div class="offer-desc">Statistical modelling and scale development support for your research, using SPSS, AMOS, and R-Studio.</div>
+        </div>
+        <div class="offer-card c-indigo">
+          <div class="offer-icon">✍️</div>
+          <div class="offer-title">Academic Writing Coaching</div>
+          <div class="offer-desc">Coaching to strengthen your paper's chances at high-impact journals.</div>
+        </div>
+      </div>
+
+      <div class="offer-group-label c-rose">Management Education</div>
+      <div class="offer-grid">
+        <div class="offer-card c-rose">
+          <div class="offer-icon">🎓</div>
+          <div class="offer-title">Curriculum &amp; Pedagogy Design</div>
+          <div class="offer-desc">Redesign your programme's curriculum and teaching approach for better outcomes.</div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="sec-head"><h2>Contact</h2><div class="sec-line"></div></div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.25rem;box-shadow:var(--shadow);text-align:center">
+        <div style="font-family:sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:.35rem">Interested in Consulting or Corporate Training?</div>
+        <div style="font-family:sans-serif;font-size:.85rem;color:var(--muted);margin-bottom:.9rem">See full offerings under the <a href="#consulting">Consulting</a> tab above.</div>
+        <a class="profile-btn" style="display:inline-block;padding:.6rem 1.4rem;font-size:.9rem" href="mailto:omjee.soe@hotmail.com?subject=Consulting%20Inquiry&body=Name%3A%20%0D%0AOrganization%3A%20%0D%0AService%20Interested%20In%3A%20%0D%0ABudget%20Range%3A%20%0D%0AMessage%3A%20%0D%0A">📩 Book a Consultation</a>
+      </div>
+
       <div class="contact-grid">
         <div class="contact-card">
           <div class="contact-icon">📧</div>
@@ -596,6 +710,16 @@ footer a{color:rgba(255,255,255,.75)}
       a.style.color=a.getAttribute('href')==='#'+cur?'#fff':'';
     });
   });
+
+  // Flip-in reveal as each section scrolls into view (slow-to-mid speed)
+  const flipObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+      }
+    });
+  },{threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  secs.forEach(s=>flipObserver.observe(s));
 </script>
 </body>
 </html>
